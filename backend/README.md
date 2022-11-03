@@ -1,7 +1,7 @@
 
 # REST API
 
-All HTTP requests below will fetch a JSON response.  The base path (while the app is in development) will be `http://localhost/php-blog-example/backend`.  The rest of endpoints maybe reached as follows.
+All HTTP requests below will fetch a JSON response.  The base path (while the app is in development) will be `http://localhost/php-blog-example/backend/index.php`.  The rest of endpoints maybe reached as follows.
 
 `GET /blogs` will fetch a JSON response will all of the blogs in the database.  Example response:
 

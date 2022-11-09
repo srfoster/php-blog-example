@@ -15,4 +15,6 @@ All HTTP requests below will fetch a JSON response.  The base path (while the ap
 
 # Note about CORS
 
-Our REST API returns a header `Access-Control-Allow-Origin: *`.  This allows the React dev environment (by default hosted at `localhost:3000`) to be able to access resources "cross-origin" -- which is normally disabled for security reasons.
+Our REST API returns a header `Access-Control-Allow-Origin: *`.  This allows the React dev environment (by default hosted at `localhost:3000`) to be able to access resources "cross-origin" -- which is normally disabled for security reasons.  (For a quick overview, see: https://www.youtube.com/watch?v=4KHiSt0oLJ0)
+
+

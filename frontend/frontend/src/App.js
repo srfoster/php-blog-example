@@ -1,21 +1,12 @@
 import './App.css';
 
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
 
 function BasicCard(props) {
   return (
@@ -37,11 +28,26 @@ function BasicCard(props) {
 function App() {
   let [blogs, setBlogs] = useState([])
 
-  fetch('http://localhost/php-blog-example/backend/index.php/blogs')
-    .then((response) => response.json())
-    .then((data) => {
-      setBlogs(data)
-    });
+  useEffect(
+    ()=>{
+      fetch('http://localhost/php-blog-example/backend/index.php/blogs')
+        .then((response) => response.json())
+        .then((data) => {
+          setBlogs(data)
+        });
+    }, []
+  )
+
+
+  function f(b){
+    let color = "red"
+    if(b.user_id == 2)
+      color = "lime"
+
+    return <div style={{backgroundColor: color, margin: 5}}>
+      <BasicCard blogData={b} />
+    </div>
+  }
 
   return (
     <div className="App">
@@ -50,10 +56,7 @@ function App() {
           Welcome to the list of blogs!
         </p>
 
-        {blogs.map((b)=>{
-            return <BasicCard blogData={b} />
-        })}
-
+        {blogs.map(f)}
 
       </header>
     </div>

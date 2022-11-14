@@ -24,3 +24,4 @@ This is an example of a decoupled app.  The backend will be written in PHP and t
 * Add ability to "like" a blog post
 * Add ability to comment on a blog post, basic CRUD for comments
 * Ability to add "tags" or "topics" to a post (so we can do recommendations)
+* [DevOps] Make it easier to onboard new developers: document getting started process and/or create helper scripts for getting started

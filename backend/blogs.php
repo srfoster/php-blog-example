@@ -11,7 +11,7 @@
     echo "Error, database is likely not created.";
   }
 
-  $query = "SELECT * FROM posts;";
+  $query = "SELECT * FROM posts JOIN users ON posts.user_id = users.id;";
 
   $statement = $db->prepare($query);
   $statement->execute();

@@ -13,6 +13,7 @@ function BasicCard(props) {
     <div style={{margin: 10}}>
       <Card sx={{ minWidth: 275 }} >
         <CardContent>
+          <img src={props.blogData.profile_pic_url} />
           {props.blogData.title} <br/><br/>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {props.blogData.creation_date}

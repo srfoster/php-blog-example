@@ -23,7 +23,74 @@ function BasicCard(props) {
           </Typography>
         </CardContent>
       </Card>
+      <Button
+        variant="outlined" color="error"
+        onClick={() => {
+          alert('clicked');
+        }}
+      >
+        DELETE
+      </Button>
     </div>
+  );
+}
+
+function BasicCard2(props) {
+  return (
+    <div style={{margin: 10}}>
+      <Card sx={{ minWidth: 275 }} >
+        <CardContent>
+          <img src={props.blogData.profile_pic_url} />
+          {props.blogData.title} <br/><br/>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            {props.blogData.creation_date}
+          </Typography>
+          <Typography variant="body2">
+            {props.blogData.text}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant="outlined" color="error"
+            onClick={() => {
+              alert('clicked');
+            }}
+          >
+            DELETE
+          </Button>
+        </CardActions>
+      </Card>
+    </div>
+  );
+}
+
+
+function BasicCard3(props) {
+  return (
+    <>
+      <div style={{margin: 10}}>
+        <Card sx={{ minWidth: 275 }} >
+          <CardContent>
+            <img src={props.blogData.profile_pic_url} />
+            {props.blogData.title} <br/><br/>
+            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+              {props.blogData.creation_date}
+            </Typography>
+            <Typography variant="body2">
+              {props.blogData.text}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
+      <Button
+        variant="outlined" color="error"
+        onClick={() => {
+          alert('clicked');
+        }}
+      >
+        DELETE
+      </Button>
+    </>
   );
 }
 
@@ -46,9 +113,16 @@ function App() {
     if(b.user_id == 2)
       color = "lime"
 
+    /*
     return <div style={{backgroundColor: color, margin: 5}}>
-      <BasicCard blogData={b} />
+      <BasicCard3 blogData={b} />
     </div>
+    */
+
+    return <>
+      <BasicCard3 blogData={b} />
+      <br/>
+    </>
   }
 
   return (

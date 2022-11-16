@@ -12,7 +12,6 @@ This is an example of a decoupled app.  The backend will be written in PHP and t
 
 # Future plans
 
-* Add profile pictures to users
 * Show author's name when we display a blog post
 * Make blog tiles be links to the full blog post
 * Basic blog post CRUD (create, read, update, destroy):

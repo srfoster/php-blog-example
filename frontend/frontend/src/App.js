@@ -10,68 +10,11 @@ import Typography from '@mui/material/Typography';
 
 function BasicCard(props) {
   return (
-    <div style={{margin: 10}}>
-      <Card sx={{ minWidth: 275 }} >
-        <CardContent>
-          <img src={props.blogData.profile_pic_url} />
-          {props.blogData.title} <br/><br/>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {props.blogData.creation_date}
-          </Typography>
-          <Typography variant="body2">
-            {props.blogData.text}
-          </Typography>
-        </CardContent>
-      </Card>
-      <Button
-        variant="outlined" color="error"
-        onClick={() => {
-          alert('clicked');
-        }}
-      >
-        DELETE
-      </Button>
-    </div>
-  );
-}
-
-function BasicCard2(props) {
-  return (
-    <div style={{margin: 10}}>
-      <Card sx={{ minWidth: 275 }} >
-        <CardContent>
-          <img src={props.blogData.profile_pic_url} />
-          {props.blogData.title} <br/><br/>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {props.blogData.creation_date}
-          </Typography>
-          <Typography variant="body2">
-            {props.blogData.text}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button
-            variant="outlined" color="error"
-            onClick={() => {
-              alert('clicked');
-            }}
-          >
-            DELETE
-          </Button>
-        </CardActions>
-      </Card>
-    </div>
-  );
-}
-
-
-function BasicCard3(props) {
-  return (
     <>
       <div style={{margin: 10}}>
         <Card sx={{ minWidth: 275 }} >
           <CardContent>
-            <img src={props.blogData.profile_pic_url} />
+            <img src={props.blogData.profile_pic_url} /> <br/>
             {props.blogData.title} <br/><br/>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
               {props.blogData.creation_date}
@@ -120,7 +63,7 @@ function App() {
     */
 
     return <>
-      <BasicCard3 blogData={b} />
+      <BasicCard blogData={b} />
       <br/>
     </>
   }

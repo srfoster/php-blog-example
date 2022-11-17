@@ -1,21 +1,28 @@
 import './App.css';
 
 import {useState, useEffect} from "react"
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 
 function BasicCard(props) {
   return (
     <>
-      <div style={{margin: 10}}>
+      <div style={{margin: 10, textAlign: "left"}}>
         <Card sx={{ minWidth: 275 }} >
           <CardContent>
-            <img src={props.blogData.profile_pic_url} /> <br/>
-            {props.blogData.title} <br/><br/>
+          <Chip
+            avatar={<Avatar src={props.blogData.profile_pic_url} />}
+            label={props.blogData.name}
+
+            /> <br/>
+
+            {props.blogData.title}
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
               {props.blogData.creation_date}
             </Typography>

@@ -35,7 +35,18 @@ function BasicCard(props) {
       <Button
         variant="outlined" color="error"
         onClick={() => {
-          alert('clicked');
+          fetch(
+            'http://localhost/php-blog-example/backend/index.php/blogs/'+props.blogData.id,
+            {
+              method: 'DELETE',
+            })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data)
+
+              //Quick hack to see result of deletion
+              window.location.reload();
+            });
         }}
       >
         DELETE

@@ -5,18 +5,17 @@
 
   try {
    $db = new PDO($dsn, $username, $password);
-
+   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
   catch (PDOException $e) {
     echo "Error, database is likely not created.";
   }
 
-  $query = "DELETE posts WHERE id = :id";
+  $query = "DELETE FROM posts WHERE id = :id";
 
   $statement = $db->prepare($query);
-  $statement->bindParam("id", $lastElement, PDO::PARAM_INT);
+  $statement->bindValue("id", $lastElement);
   $statement->execute();
-
 
   $statement->closeCursor();
 
